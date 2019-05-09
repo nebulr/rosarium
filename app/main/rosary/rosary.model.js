@@ -36,10 +36,6 @@ class Rosary {
   ];
 
   position = 0;
-  lang = 'EN';
-  languageOptions = [
-    'EN', 'ES', 'LA'
-  ];
 
   startNewRosary() {
     this.position = 0;
