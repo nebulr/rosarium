@@ -1,12 +1,42 @@
 import React from 'react';
+import Component from 'react-component-state';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import { withNamespaces } from 'react-i18next';
 
-export default class App extends React.Component {
+import AppNavigator from './navigation/AppNavigator';
+import Beads from './components/Beads';
+
+import config from './config';
+
+class WrappedStack extends React.Component {
+  static router = Stack.router;
+  render() {
+    const { t } = this.props;
+    return (        
+      <View style={styles.container}>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        <AppNavigator />
+        <Beads />
+      </View>
+    );
+  }
+}
+
+const ReloadAppOnLanguageChange = withNamespaces('common', {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedStack);
+
+export default class App extends Component {
   state = {
     isLoadingComplete: false,
+    language: 'EN'
   };
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -19,20 +49,13 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
+        <ReloadAppOnLanguageChange />
       );
     }
   }
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require('./assets/images/robot-dev.png'),
-        require('./assets/images/robot-prod.png'),
-      ]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,

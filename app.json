@@ -5,12 +5,16 @@
     "slug": "rosarium",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "entryPoint": "./app/index.js",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./app/common/assets/images/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./app/common/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
