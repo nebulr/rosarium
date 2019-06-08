@@ -1,35 +1,18 @@
 import React from 'react';
 import Component from 'react-component-state';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
-import { withNamespaces } from 'react-i18next';
+import { AppLoading, Asset, Font } from 'expo';
+import { Ionicons, FontAwesome5, FontAwesome } from '@expo/vector-icons';
+import { NativeRouter, Route } from 'react-router-native';
 
-import AppNavigator from './navigation/AppNavigator';
-import Beads from './components/Beads';
+import './common';
+import Rosary from './main/rosary';
+import Settings from './main/settings';
 
-import config from './config';
 
-class WrappedStack extends React.Component {
-  static router = Stack.router;
-  render() {
-    const { t } = this.props;
-    return (        
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-      </View>
-    );
-  }
-}
-
-const ReloadAppOnLanguageChange = withNamespaces('common', {
-  bindI18n: 'languageChanged',
-  bindStore: false,
-})(WrappedStack);
-
-export default class App extends Component {
+class App extends Component {
   state = {
-    isLoadingComplete: false,
-    language: 'EN'
+    isLoadingComplete: false
   };
 
   constructor(props) {
@@ -47,7 +30,13 @@ export default class App extends Component {
       );
     } else {
       return (
-        <ReloadAppOnLanguageChange />
+        <NativeRouter>
+          <View style={styles.container}>
+            { Platform.OS === 'ios' && <StatusBar barStyle="default" /> }
+            <Route path="/" component={Rosary} />
+            <Route path="/settings" component={Settings} />
+          </View>
+        </NativeRouter>
       );
     }
   }
@@ -56,10 +45,11 @@ export default class App extends Component {
     return Promise.all([
       Font.loadAsync({
         // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        ...Ionicons.font,
+        ...FontAwesome5.font,
+        ...FontAwesome.font,
+        'garamond': require('./common/assets/fonts/garamond.ttf'),
+        'castellar': require('./common/assets/fonts/castellar.ttf'),
       }),
     ]);
   };
@@ -81,3 +71,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default Expo.registerRootComponent(App);

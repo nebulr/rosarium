@@ -1,14 +1,4 @@
 class Rosary {
-  prayers = [
-    'SIGN_OF_THE_CROSS', 
-    'APOSTLES_CREED', 
-    'THE_LORDS_PRAYER', 
-    'HAIL_MARY', 
-    'GLORY_BE',
-    'FATIMA_PRAYER',
-    'HAIL_HOLY_QUEEN',
-    'LITANY_OF_LORETO'
-  ];
 
   decades = 5;
 
@@ -36,6 +26,18 @@ class Rosary {
   ];
 
   position = 0;
+  mystery = 0;
+
+  prayers = [];
+
+  constructor() {
+    this.prayers = this.prayers.concat(this.preDecades);
+    for(let i = 0; i < this.decades; i++) {
+      this.prayers.push(`MYSTERIES_${i}`);
+      this.prayers = this.prayers.concat(this.decade);
+    }
+    this.prayers = this.prayers.concat(this.postDecades);
+  }
 
   startNewRosary() {
     this.position = 0;
@@ -43,7 +45,7 @@ class Rosary {
 
   getMystery(dayOfWeek) {
     let day = dayOfWeek || (new Date()).getDay();
-    return this.mysteries[day];
+    return this.mysteries[this.days[day]];
   }
 
   getPrayer(newPosition) {
