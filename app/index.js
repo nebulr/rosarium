@@ -1,14 +1,14 @@
-import React from 'react';
-import Component from 'react-component-state';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font } from 'expo';
+import { Provider } from 'react-redux';
+import React, { Component } from 'react';
+import * as Font from 'expo-font';
+import { AppLoading, Asset, registerRootComponent } from 'expo';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, history, persistor } from './common/redux/store';
+import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
 import { Ionicons, FontAwesome5, FontAwesome } from '@expo/vector-icons';
-import { NativeRouter, Route } from 'react-router-native';
 
 import './common';
-import Rosary from './main/rosary';
-import Settings from './main/settings';
-
+import Routes from './routes';
 
 class App extends Component {
   state = {
@@ -30,13 +30,11 @@ class App extends Component {
       );
     } else {
       return (
-        <NativeRouter>
-          <View style={styles.container}>
-            { Platform.OS === 'ios' && <StatusBar barStyle="default" /> }
-            <Route path="/" component={Rosary} />
-            <Route path="/settings" component={Settings} />
-          </View>
-        </NativeRouter>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Routes />
+          </PersistGate>
+        </Provider>
       );
     }
   }
@@ -48,9 +46,9 @@ class App extends Component {
         ...Ionicons.font,
         ...FontAwesome5.font,
         ...FontAwesome.font,
-        'garamond': require('./common/assets/fonts/garamond.ttf'),
-        'castellar': require('./common/assets/fonts/castellar.ttf'),
-      }),
+        garamond: require('./common/assets/fonts/garamond.ttf'),
+        castellar: require('./common/assets/fonts/castellar.ttf')
+      })
     ]);
   };
 
@@ -68,8 +66,8 @@ class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: '#fff'
+  }
 });
 
-export default Expo.registerRootComponent(App);
+export default registerRootComponent(App);

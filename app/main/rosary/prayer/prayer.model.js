@@ -1,11 +1,13 @@
-import translation from 'react-simple-translation';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import translations from 'react-simple-translation';
 
 class Prayer {
   prayers = [
-    'SIGN_OF_THE_CROSS', 
-    'APOSTLES_CREED', 
-    'THE_LORDS_PRAYER', 
-    'HAIL_MARY', 
+    'SIGN_OF_THE_CROSS',
+    'APOSTLES_CREED',
+    'THE_LORDS_PRAYER',
+    'HAIL_MARY',
     'GLORY_BE',
     'FATIMA_PRAYER',
     'HAIL_HOLY_QUEEN',
@@ -13,11 +15,11 @@ class Prayer {
   ];
 
   getPrayerTitle(number) {
-    return translation.get(this.prayers[number] + '_TITLE');
+    return translations.get(this.prayers[number] + '_TITLE');
   }
 
   getPrayerContent(number) {
-    return translation.get(this.prayers[number] + '_CONTENT');
+    return translations.get(this.prayers[number] + '_CONTENT');
   }
 }
 
