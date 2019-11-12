@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import Singleton from 'react-singleton-access';
+
+const standardDiameter = Dimensions.get('window').width - 20;
 
 export default StyleSheet.create({
   container: {
@@ -41,5 +43,19 @@ export default StyleSheet.create({
   active: {
     backgroundColor: Singleton.Constants.Colors.primaryColor,
     color: 'white'
+  },
+  chain: {
+    marginLeft: standardDiameter / 2 - 5,
+    marginRight: standardDiameter / 2 - 5,
+    marginTop: -10,
+    marginBottom: -10
+  },
+  cross: {
+    width: standardDiameter,
+    height: standardDiameter,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: -10,
+    marginBottom: -10
   }
 });

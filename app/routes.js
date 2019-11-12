@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import AppLocale from './common/language';
 import { IntlProvider } from 'react-intl';
-import { NativeRouter, Route } from 'react-router-native';
+import { NativeRouter, Route, Redirect, Switch } from 'react-router-native';
 import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
 
 import Rosary from './main/rosary';
@@ -21,16 +21,22 @@ const styles = StyleSheet.create({
 
 class Routes extends Component {
   render() {
+    const { mystery } = this.props;
     return (
       <NativeRouter>
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <Route path="/" exact component={Rosary} />
-          <Route path="/settings" component={Settings} />
+          <Switch>
+            <Route path="/rosary/:mystery" component={Rosary} />
+            <Route path="/settings" component={Settings} />
+            <Redirect to={`/rosary/${mystery}`} />
+          </Switch>
         </View>
       </NativeRouter>
     );
   }
 }
 
-export default connect(state => ({}))(Routes);
+export default connect(state => ({
+  mystery: state.Mystery.mystery
+}))(Routes);

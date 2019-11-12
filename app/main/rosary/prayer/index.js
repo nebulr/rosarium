@@ -19,10 +19,22 @@ export default class Prayer extends Component {
   }
 
   render() {
+    const { number } = this.props;
+    const alternate = PrayerModel.noBead.indexOf(number) === -1;
+    let beadStyle, titleStyle, contentStyle;
+    if (alternate) {
+      beadStyle = PrayerStyles.bead;
+      titleStyle = PrayerStyles.title_white;
+      contentStyle = PrayerStyles.content_white;
+    } else {
+      beadStyle = {};
+      titleStyle = PrayerStyles.title_black;
+      contentStyle = PrayerStyles.content_black;
+    }
     return (
-      <View>
-        <Text style={PrayerStyles.title}>{PrayerModel.getPrayerTitle(this.props.number)}</Text>
-        <Text style={PrayerStyles.content}>{PrayerModel.getPrayerContent(this.props.number)}</Text>
+      <View style={beadStyle}>
+        <Text style={titleStyle}>{PrayerModel.getPrayerTitle(this.props.number)}</Text>
+        <Text style={contentStyle}>{PrayerModel.getPrayerContent(this.props.number)}</Text>
       </View>
     );
   }

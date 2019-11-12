@@ -14,6 +14,8 @@ class Prayer {
     'LITANY_OF_LORETO'
   ];
 
+  noBead = [0, 1, 4, 5, 6, 7];
+
   getPrayerTitle(number) {
     return translations.get(this.prayers[number] + '_TITLE');
   }
