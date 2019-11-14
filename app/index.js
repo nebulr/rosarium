@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+    if (!this.state.isLoadingComplete) {
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
@@ -28,15 +28,14 @@ class App extends Component {
           onFinish={this._handleFinishLoading}
         />
       );
-    } else {
-      return (
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <Routes />
-          </PersistGate>
-        </Provider>
-      );
     }
+    return (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Routes />
+        </PersistGate>
+      </Provider>
+    );
   }
 
   _loadResourcesAsync = async () => {
@@ -44,7 +43,7 @@ class App extends Component {
       Font.loadAsync({
         // This is the font that we are using for our tab bar
         ...Ionicons.font,
-        ...FontAwesome5.font,
+        //...FontAwesome5.font,
         ...FontAwesome.font,
         garamond: require('./common/assets/fonts/garamond.ttf'),
         castellar: require('./common/assets/fonts/castellar.ttf')

@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "deploy:ios": "expo build:ios && expo upload:ios",
+    "deploy:android": "expo build:android && expo upload:android"
   },
   "jest": {
     "preset": "jest-expo"
@@ -20,13 +22,15 @@
     "deepmerge": "3.2.0",
     "eslint-config-airbnb": "=17.1.0",
     "expo": "35.0.0",
-    "expo-font": "7.0.0",
+    "expo-font": "^7.0.0",
+    "expokit": "33.0.4",
     "native-base": "=2.11.0",
     "node-uuid": "1.4.8",
     "react": "16.8.6",
     "react-intl": "2.7.2",
-    "react-native": "0.59.8",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.1.tar.gz",
     "react-native-pose": "=0.9.0",
+    "react-native-unimodules": "^0.4.0",
     "react-redux": "^7.1.1",
     "react-router-native": "5.0.0",
     "react-simple-translation": "0.1.3",

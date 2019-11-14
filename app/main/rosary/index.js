@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Content } from 'native-base';
-import { Image, View } from 'react-native';
+import { Container, Content, Icon, Button } from 'native-base';
+import { Image, View, Text, ScrollView } from 'react-native';
 import posed, { Transition } from 'react-native-pose';
 import { connect } from 'react-redux';
 
@@ -15,40 +15,18 @@ import Mystery from './mystery';
 import chainImage from '../../common/assets/images/chain_small.png';
 import crossPattee from '../../common/assets/images/cross-pattee.png';
 
-const ScrollView = posed.ScrollView({
-  open: { x: 0, scaleY: 1 },
-  closed: { x: 100, scaleY: 0 }
-});
-
-const Bead = posed.View({
-  //draggable: 'y',
-  dragBounds: { top: '-100%', bottom: '100%' }
-  // enter: {
-  //   y: 0,
-  //   opacity: 1,
-  //   delay: 300,
-  //   transition: {
-  //     y: { type: 'spring', stiffness: 1000, damping: 15 },
-  //     default: { duration: 300 }
-  //   }
-  // },
-  // exit: {
-  //   y: 50,
-  //   opacity: 0,
-  //   transition: { duration: 150 }
-  // }
-});
-
 class Rosary extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      index: 0
+      index: 0,
+      scrollToTop: false
     };
   }
 
   render() {
+    const { scrollToTop } = this.state;
     RosaryModel.configure(this.props.mystery);
     const prayers = RosaryModel.prayers.map((item, index) => {
       switch (item.type) {
@@ -85,11 +63,18 @@ class Rosary extends Component {
           );
       }
     });
+    const button = (
+      <Button onPress={() => this.setState({ scrollToTop: true })} full large dark>
+        <Text>
+          <Icon name="ios-arrow-up" style={{ paddingLeft: 20, paddingRight: 20 }} />
+        </Text>
+      </Button>
+    );
     return (
       <Container>
         <RosaryNavigator />
         <Content>
-          <ScrollView>{prayers}</ScrollView>
+          <ScrollView scrollsToTop={true}>{prayers}</ScrollView>
         </Content>
       </Container>
     );

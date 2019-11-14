@@ -25,7 +25,6 @@ class Routes extends Component {
     return (
       <NativeRouter>
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           <Switch>
             <Route path="/rosary/:mystery" component={Rosary} />
             <Route path="/settings" component={Settings} />

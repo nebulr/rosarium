@@ -3,6 +3,8 @@
   "LANG_ES": "Espanol",
   "LANG_LT": "Latin",
   "SETTINGS": "Settings",
+  "ABOUT": "About",
+  "ABOUT_CONTENT": "This app was made by the Poor Fellow Soldiers of Christ. All purchases made to use this app will be given to other Catholic Ministries we support",
   "SIGN_OF_THE_CROSS_TITLE": "Sign of the Cross",
   "SIGN_OF_THE_CROSS_CONTENT": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
   "APOSTLES_CREED_TITLE": "Apostles' Creed",
@@ -49,6 +51,6 @@
   "GLORIOUS_MYSTERIES_4": "He Who crowned thee Queen of Heaven. [Rev 12:1]",
   "HAIL_HOLY_QUEEN_TITLE": "Hail Holy Queen",
   "HAIL_HOLY_QUEEN_CONTENT": "Hail holy Queen, Mother of mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears.~\n~\nTurn then, most gracious Advocate, thine eyes of mercy toward us. And after this our exile show unto us the blessed fruit of thy womb, Jesus.~\n~\nO clement, O loving, O sweet Virgin Mary. Amen.~\n~\nV. Pray for us, O Holy Mother of God.~\n~\nR. That we may be made worthy of the promises of Christ.~\n~\nLet us pray~\nAlmighty, everlasting God, who by the cooperation of the Holy Spirit, didst prepare the body and soul of the glorious Virgin-Mother Mary to become a worthy dwelling for Thy Son; grant that we who rejoice in her commemoration may, by her loving intercession, be delivered from present evils and from the everlasting death. Amen.",
-  "LITANY_OF_LORETO_TITLE": "Litany of Loreto",
-  "LITANY_OF_LORETO_CONTENT": "Lord, have mercy on us.~\n~\nR. Christ, have mercy on us.~\n~\nLord, have mercy on us. Christ, hear us.~\n~\nR. Christ, graciously hear us."
+  "LITANY_OF_LORETO_TITLE": "",
+  "LITANY_OF_LORETO_CONTENT": ""
 }

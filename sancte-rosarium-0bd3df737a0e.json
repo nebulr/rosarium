@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sancte-rosarium",
+  "private_key_id": "0bd3df737a0e504f30aec78920ea5e1de4e7a2fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDC30j/G01q1QzU\nBEDk9/eNTYWgE7K8mhJEaM7MplFb4E5PH8pnA257txfu+RyjZxP4xppDI9UR4+4T\n2v9XLUQcBA1Qz0vAidMDg5iMf2uVDv0EY2xmDuvl4dt+o+6MCXh1/E7rHWw2tdAP\nkKYMLdSpoXoivPL9MOP8VF7XhPSS2Uu5aD6PiAJpk/JOr5I05lDlsaXhhMOzrwzE\n5F7cGNoX3UejU8YLC3Ntl+4nInEgNjjMXQL3ZhwL2zixsOJRLuv+cfXIwY6e49yw\nmJDazA4gPWDTYgc+fFxi7zbNkD9IwgY9htucESuJppIyHh+ei2FElGdkFh1G5HUs\naakRO90ZAgMBAAECggEAEGEdLRgZ4ztiFyX+YGB5Rb641xIgyVp345kdnLT0DLFn\nU5478Hmo3SwwDk2Q+ykMVDI5QCBwZc8PMUsMgELVQTeT+PFbkCTlgBudBF4naEF4\nwdgrgc6KRGm9/cCAqfOX1O7uoTN5Z4XTpaNGWaq2f8WLUwUntWFZIFnlGN9bgUYt\nntJ1+9oLyBmNgVioRobwXGg4RuvVQxPwcPcIoZm7/d4slV6x/7uywr+QXnLtMnHf\nvseAmUBHxA6CNXQ4iIBmqYJRkm1EvEuHpfRfvKZSOwsLML5nE5aHrzMffp0EVOj8\n2GVWw80vvCgAhZ+hoIS8WaD0De3TS4gIbtXY0RYMwQKBgQD57eZmBwYGU4qFKYOk\nb02R34y0VciFWTTwOVlN+ViKn1WoQE5W670jgYdnc+CDnJxD9DIjuyZsBB30dnJv\naU3pmvBC6J8xMgqjOeg4FMBqjiRXd5Tw73jfBBZD2Yvt8GVM8jVvZAwGxfw7e581\n/IJr8Bo4MGDS0L9+ofBzYWZMqQKBgQDHmwgMJqIFpyKcNFZyTlvNHNfJ66bbcD2U\nJkFOzj1GFBG+l4APk2k+c1WOq3uSUMd38HwjB1Io/EVUOFe1Npu7lx3SuMdK1TFX\nUttNgK5NXlA8g0C+wLTX+8Ba/yWSeznPa8toll0jxb7lIB+JfsqG8CxPLmpvRnhu\nbP8GAg1i8QKBgDRtx4tXpdfl5oUQtGDmSGt1bdrWs/3lPMm3/hfxWrWZvypQcx6g\nzUiJf5IgKNTzIYTP0UTVmbXHF1GVF2RvvrxmmEgw7FQxnzGmkCRTlhnEP7NpjoEM\ne1qtTM5m8Ie1ikqd9L+tSSiSl9sSj8+PbPyfnaBz5ZvT1pgF+J77q64hAoGAYGlS\nlsPmSIK1JevlwWp1zvnahO5s9tsc8z0TGGRnljzFYWC9+0gBcqe0sKfFlSOtZRJk\nc2rq1V8cgZSBUMciq5ZPUmPr5wpYvcwIn0PDbR1b9g6TrE9aSmSQQaOx2zHn93ci\nlc7jCA9QqE0+zmPOoSTK0igiQsMwEm5VM+qz2pECgYEAvl6/LlFKeAO9qjBitvr/\n9WwNv+DAdgYAFerMlcxAd/ekEKlawGQTUrd6ZDKXyiNUBRGRaOXwDt3xbXwDF795\nrbtlm/+2FqfELOVo0hsIDF2sHfH4ykmgCNKxBeHr+OEJpzzhopqLfVoUn+JqbTsJ\nnrNn5uqO0dfrSHDT8jt9RBs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sancte-rosarium@sancte-rosarium.iam.gserviceaccount.com",
+  "client_id": "117823687751888980199",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sancte-rosarium%40sancte-rosarium.iam.gserviceaccount.com"
+}

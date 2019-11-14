@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Content, ListItem, Button, Text } from 'native-base';
+import {
+  Container,
+  Header,
+  Content,
+  ListItem,
+  Button,
+  Text,
+  Body,
+  Title,
+  Left,
+  Right
+} from 'native-base';
+import { ScrollView } from 'react-native';
 import SettingsNavigator from './settings.navigator';
 
 import actions from '../../common/redux/language/actions';
@@ -19,32 +31,50 @@ class Settings extends Component {
     return (
       <Container>
         <SettingsNavigator />
-        <Content>
-          <Button
-            onPress={() => this.onNewSelect('en_US')}
-            full
-            info={englishSelected}
-            light={!englishSelected}
-          >
-            <Text>{translation.get('LANG_EN')}</Text>
-          </Button>
-          <Button
-            onPress={() => this.onNewSelect('es_ES')}
-            full
-            info={spanishSelected}
-            light={!spanishSelected}
-          >
-            <Text>{translation.get('LANG_ES')}</Text>
-          </Button>
-          <Button
-            onPress={() => this.onNewSelect('la_LA')}
-            full
-            info={latinSelected}
-            light={!latinSelected}
-          >
-            <Text>{translation.get('LANG_LT')}</Text>
-          </Button>
-        </Content>
+        <ScrollView>
+          <Content>
+            <Button
+              onPress={() => this.onNewSelect('en_US')}
+              full
+              large
+              dark={englishSelected}
+              light={!englishSelected}
+            >
+              <Text>{translation.get('LANG_EN')}</Text>
+            </Button>
+            <Button
+              onPress={() => this.onNewSelect('es_ES')}
+              full
+              large
+              dark={spanishSelected}
+              light={!spanishSelected}
+            >
+              <Text>{translation.get('LANG_ES')}</Text>
+            </Button>
+            <Button
+              onPress={() => this.onNewSelect('la_LA')}
+              full
+              large
+              dark={latinSelected}
+              light={!latinSelected}
+            >
+              <Text>{translation.get('LANG_LT')}</Text>
+            </Button>
+            <Text />
+            <Header>
+              <Left />
+              <Body>
+                <Title>{translation.get('ABOUT')}</Title>
+              </Body>
+              <Right />
+            </Header>
+            <Content>
+              <Text style={{ paddingTop: 20, textAlign: 'center' }}>
+                {translation.get('ABOUT_CONTENT')}
+              </Text>
+            </Content>
+          </Content>
+        </ScrollView>
       </Container>
     );
   }
